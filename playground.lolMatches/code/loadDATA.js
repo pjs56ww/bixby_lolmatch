@@ -1,4 +1,10 @@
 module.exports.function = function loadDATA (modes) {
+
+  const naverURL = 'https://sports.news.naver.com/esports/index.nhn';
+  const youtubeURL = ''
+  const afreecatvURL = 'http://play.afreecatv.com/aflol'
+  const twitchtvURL = 'https://www.twitch.tv/lck_korea'
+
   const config = require('config');
   const fail = require('fail');
   const http = require('http');
@@ -12,7 +18,7 @@ module.exports.function = function loadDATA (modes) {
   var date = new Date(); 
   var year = date.getFullYear(); 
   var month = new String(date.getMonth()+1); 
-  var day = new String(date.getDate()); 
+  var day = new String(date.getDate()+4);  // 변경 필요
 
   // 한자리수일 경우 0을 채워준다. 
   if(month.length == 1){ 
@@ -39,12 +45,17 @@ module.exports.function = function loadDATA (modes) {
   }
   else{
     aa = response[modes - 2]["TeamAKey"] + " VS " + response[modes - 2]["TeamBKey"] + " 경기가 진행 중입니다."
-    naverURL = 'https://sports.news.naver.com/esports/index.nhn'
-
+    
+    
 
     return {
       state : aa,
-      naverURL : naverURL
+
+      youtubeURL : youtubeURL,
+      twitchtvURL : twitchtvURL,
+      afreecatvURL : afreecatvURL,
+      naverURL: naverURL,
+
     };
   }
 }

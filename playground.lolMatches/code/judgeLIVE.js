@@ -12,7 +12,7 @@ module.exports.function = function judgeLIVE (keyword) {
   var date = new Date(); 
   var year = date.getFullYear(); 
   var month = new String(date.getMonth()+1); 
-  var day = new String(date.getDate()); 
+  var day = new String(date.getDate() + 4);  //변경필요
 
   // 한자리수일 경우 0을 채워준다. 
   if(month.length == 1){ 
@@ -27,14 +27,14 @@ module.exports.function = function judgeLIVE (keyword) {
 
   response = http.getUrl(url, {format:"json", cacheTime: 0})
 
-  timeNow = Number(date.getHours()) + 9 + 13
+  timeNow = Number(date.getHours()) + 9  //변경필요
   console.log(timeNow)
   if (response != []){
     if (keyword == "라이브"){
 
       for(var i = 0; i < response.length; i++){
         aa = Number(response[i]["DateTime"].slice(11, 13))
-        if(aa + 9 == timeNow){
+        if(aa + 9 <= timeNow && aa + 14 > timeNow){
           mode = i + 2
           return mode
         }
@@ -55,3 +55,11 @@ module.exports.function = function judgeLIVE (keyword) {
   }
 
 }
+
+
+
+// 올해 LCK 결과
+// 모든 일정
+// 지난 경기 => 대회 판단
+// 라이브 중이면 띄워주고 아니면 일정 보여주기
+// 팀별 일정 보여주기

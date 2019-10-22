@@ -9,7 +9,16 @@ structure (Result) {
   property (datetime) {
     type (DateTime)
   }
-  property (liveURL) {
-    type (LiveURL)
+  property (naverURL) {
+    type (NaverURL)
+  }
+  property (twitchtvURL) {
+    type (TwitchTVURL)
+  }
+  property (afreecatvURL) {
+    type (AfreecaTVURL)
+  }
+  property (youtubeURL) {
+    type (YoutubeURL)
   }
 }
