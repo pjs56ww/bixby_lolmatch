@@ -35,16 +35,11 @@ module.exports.function = function loadDATA (modes) {
 
   if(modes == 0){
     return {
-      state : "금일 예정된 경기가 없습니다."
-    };
-  }
-  else if(modes == 1){
-    return {
       state : "라이브 중인 경기가 없습니다."
     };
   }
   else{
-    aa = response[modes - 2]["TeamAKey"] + " VS " + response[modes - 2]["TeamBKey"] + " 경기가 진행 중입니다."
+    aa = response[modes - 1]["TeamAKey"] + " VS " + response[modes - 1]["TeamBKey"] + " 경기가 진행 중입니다."
     
     
 

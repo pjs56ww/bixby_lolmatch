@@ -1,0 +1,20 @@
+structure (Matches) {
+  description (__DESCRIPTION__)
+  
+  property (teamA) {
+    type (TeamA)
+    min (Required) max (Many)
+  }
+  property (teamB) {
+    type (TeamB)
+    min (Required) max (Many)
+  }
+  property (datetime) {
+    type (DateTime)
+    min (Required) max (Many)
+  }
+  property (score){
+    type (Score)
+    min (Required) max (Many)
+  }
+}

@@ -1,3 +1,11 @@
-text (State) {
+structure (State) {
   description (__DESCRIPTION__)
+  property (match){
+    type (Match)
+    min (Optional) max (One)
+  }
+  property (liveURL){
+    type(LiveURL)
+    min (Optional) max (One)
+  }
 }

@@ -2,9 +2,13 @@ action (JudgeLIVE) {
   type (Search)
   description (__DESCRIPTION__)
   collect {
+    input (time_key){
+      type(Time_Key)
+      min (Optional) max (One)
+    }
     input (keyword) {
       type (Keywords)
-      min (Required) max (One)
+      min (Optional) max (One)
     }
   }
   output (Modes)

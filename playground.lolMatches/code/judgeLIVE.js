@@ -34,17 +34,23 @@ module.exports.function = function judgeLIVE (keyword) {
 
       for(var i = 0; i < response.length; i++){
         aa = Number(response[i]["DateTime"].slice(11, 13))
-        if(aa + 9 <= timeNow && aa + 14 > timeNow){
-          mode = i + 2
-          return mode
+        if (response[i]["SeasonType"]==1){
+          if(aa + 9 <= timeNow && aa + 10 > timeNow){
+            mode = i + 1
+            return mode
+          }
+        }
+        else {
+          if(aa + 9 <= timeNow && aa + 14 > timeNow){
+            mode = i + 1
+            return mode
+          }
         }
       }
-      mode = 1
-      return mode
     }
     
     else{
-      mode = 1
+      mode = 0
       return mode
     }
   }
