@@ -1,0 +1,15 @@
+structure (Result) {
+  description (__DESCRIPTION__)
+  property (state){
+    type(State)
+  }
+  property (teams) {
+    type (Teams)
+  }
+  property (datetime) {
+    type (DateTime)
+  }
+  property (liveURL) {
+    type (LiveURL)
+  }
+}

@@ -1,0 +1,12 @@
+structure (LiveURL) {
+  description (__DESCRIPTION__)
+  property (naverURL) {
+    type (NaverURL)
+  }
+  property (twitchtvURL) {
+    type (TwitchTVURL)
+  }
+  property (afreecatvURL) {
+    type (AfreecaTVURL)
+  }
+}

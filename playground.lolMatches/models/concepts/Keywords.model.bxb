@@ -1,0 +1,4 @@
+enum (Keywords) {
+  symbol (라이브)
+  symbol (비라이브)
+}

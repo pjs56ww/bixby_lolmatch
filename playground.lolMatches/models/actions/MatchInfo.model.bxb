@@ -1,0 +1,11 @@
+action (MatchInfo) {
+  type (Search)
+  description (__DESCRIPTION__)
+  collect {
+    input (modes) {
+      type (Modes)
+      min (Required) max (One)
+    }
+  }
+  output (Result)
+}
