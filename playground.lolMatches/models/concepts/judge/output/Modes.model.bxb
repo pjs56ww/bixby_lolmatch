@@ -4,6 +4,14 @@ structure (Modes) {
     type (LiveMode)
     min (Required) max (One)
   }
+  property (liveteamA){
+    type (LiveTeamA)
+    min (Optional) max (One)
+  }
+  property (liveteamB){
+    type (LiveTeamB)
+    min (Optional) max (One)
+  }
   property (teamcode) {
     type (TeamCode)
     min (Required) max (One)

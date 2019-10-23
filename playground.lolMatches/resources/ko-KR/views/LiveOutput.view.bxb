@@ -1,0 +1,25 @@
+result-view {
+  match: Result (Result) {
+  }
+
+  // message {
+  //   template()
+  // }
+
+  render {
+    layout-macro (counter-Info){
+      param(name) {
+        expression (name)
+      }
+      param(counterset) {
+        expression (counterset)
+      }
+      param(engname) {
+        expression (engname)
+      }
+      param(version) {
+        expression (version)
+      }
+    }
+  }
+}
