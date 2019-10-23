@@ -1,0 +1,5 @@
+train (t-6fk5guzddmqs7cxl80pwsq26o) {
+  utterance ("[g:Result] (롤드컵)[v:Competition_Key:'World Championship'] 결과 알려줘")
+  plan (Y2BlkCnISaxML8ovzUvRy8nP8U0sSc5ILdYLSi0uzSlhkMcuC6Y989LyGaRxKMhPSS3GpdurNCU91cczzJVBFbsC5/zcgtSSzJLM/Lx479RKBhYGRgYmBmYgzQBlMYJZIMAExEBxAA==)
+  last-modified (1571791295859)
+}

@@ -1,0 +1,4 @@
+vocab (Competition_Key) {
+  "LCK" {"엘시케이"}
+  "World Championship" {"월챔" "월드 챔피언쉽" "월드 챔피언십" "롤드컵"}
+}

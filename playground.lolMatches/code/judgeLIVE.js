@@ -1,4 +1,4 @@
-module.exports.function = function judgeLIVE (keyword) {
+module.exports.function = function judgeLIVE (team_key, competition_key) {
   const config = require('config');
   const fail = require('fail');
   const http = require('http');
@@ -7,59 +7,67 @@ module.exports.function = function judgeLIVE (keyword) {
 
   const API_KEY = '?key=1ede798d572d41bc853c6b69ddeb1425';
 
+  var teamdb = require('./data/TeamCode.js')
+  var competitiondb = require('./data/CompetitionCode.js')
 
+  // 라이브 판정
   var DATE = ''
   var date = new Date(); 
   var year = date.getFullYear(); 
   var month = new String(date.getMonth()+1); 
   var day = new String(date.getDate() + 4);  //변경필요
-
   // 한자리수일 경우 0을 채워준다. 
+
+  var live_mode = 0
+  var team_code = 0
+  var competition_code = 0
+
+
   if(month.length == 1){ 
     month = "0" + month; 
   } 
   if(day.length == 1){ 
     day = "0" + day; 
   } 
-
   DATE = String(year) + "-" + month + "-" + day;
   var url = BASE_URL + DATE + API_KEY;
-
   response = http.getUrl(url, {format:"json", cacheTime: 0})
-
   timeNow = Number(date.getHours()) + 9  //변경필요
   console.log(timeNow)
   if (response != []){
-    if (keyword == "라이브"){
-
-      for(var i = 0; i < response.length; i++){
-        aa = Number(response[i]["DateTime"].slice(11, 13))
-        if (response[i]["SeasonType"]==1){
-          if(aa + 9 <= timeNow && aa + 10 > timeNow){
-            mode = i + 1
-            return mode
-          }
+    for(var i = 0; i < response.length; i++){
+      aa = Number(response[i]["DateTime"].slice(11, 13))
+      if (response[i]["SeasonType"]==1){
+        if(aa + 9 <= timeNow && aa + 10 > timeNow){
+          live_mode = i + 1
         }
-        else {
-          if(aa + 9 <= timeNow && aa + 14 > timeNow){
-            mode = i + 1
-            return mode
-          }
+      }
+      else {
+        if(aa + 9 <= timeNow && aa + 14 > timeNow){
+          live_mode = i + 1
         }
       }
     }
-    
-    else{
-      mode = 0
-      return mode
-    }
   }
-
   else{
-    mode = 0
-    return mode
+    live_mode = 0
   }
 
+
+  // keyword에 따른 모드
+  // Default 값은 가장 가까운 대회 정보
+  if(team_key == 0 && competition_key == 0) {
+    
+  }
+  else if(team_key == 0 && competition_key != 0 ) {
+    
+  }
+  else if(team_key != 0 && competition_key == 0 ) {
+    
+  }
+  else {
+
+  }
 }
 
 

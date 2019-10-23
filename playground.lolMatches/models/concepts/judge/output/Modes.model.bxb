@@ -1,3 +1,15 @@
-text (Modes) {
+structure (Modes) {
   description (__DESCRIPTION__)
+  property (livemode) {
+    type (LiveMode)
+    min (Required) max (One)
+  }
+  property (teamcode) {
+    type (TeamCode)
+    min (Required) max (One)
+  }
+  property (competitioncode) {
+    type (CompetitionCode)
+    min (Required) max (One)
+  }
 }

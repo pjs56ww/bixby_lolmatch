@@ -1,0 +1,5 @@
+train (t-c28k42d5g98jhfktoe4l9h496) {
+  utterance ("[g:Result] (에스케이티 티원)[v:Team_Key:'SKT T1'] 일정 알려줘")
+  plan (Y2BlkCnISaxML8ovzUvRy8nP8U0sSc5ILdYLSi0uzSlhkMcuC6Y989LyGaRxKMhPSS3GpdurNCU91cczzJVBDruCkNTE3Hjv1EoGFgZGBiYGZiDNAGUxglkgwATEQHEA)
+  last-modified (1571791351012)
+}

@@ -7,7 +7,7 @@ endpoints {
     }
 
     action-endpoint (JudgeLIVE) {
-      accepted-inputs (keyword)
+      accepted-inputs (team_key, competition_key)
       local-endpoint (judgeLIVE.js)
     }
     // action-endpoint (__ACTION_NAME__) {
