@@ -1,0 +1,19 @@
+structure (LiveURL) {
+  description (__DESCRIPTION__)
+  property (afreecatvURL) {
+    type (AfreecaTVURL)
+    min (Required) max (One)
+  }
+  property (youtubeURL) {
+    type (YoutubeURL)
+    min (Optional) max (One)
+  }
+  property (twitchtvURL) {
+    type (TwitchTVURL)
+    min (Optional) max (One)
+  }
+  property (naverURL) {
+    type (NaverURL)
+    min (Optional) max (One)
+  }
+}

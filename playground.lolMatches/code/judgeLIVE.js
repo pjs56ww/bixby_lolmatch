@@ -15,7 +15,7 @@ module.exports.function = function judgeLIVE (team_key, competition_key) {
   var date = new Date(); 
   var year = date.getFullYear(); 
   var month = new String(date.getMonth()+1); 
-  var day = new String(date.getDate() + 4);  //변경필요
+  var day = new String(date.getDate());  //변경필요
   // 한자리수일 경우 0을 채워준다. 
 
   var live_mode = 0
@@ -37,7 +37,7 @@ module.exports.function = function judgeLIVE (team_key, competition_key) {
   DATE = String(year) + "-" + month + "-" + day;
   var url = BASE_URL + DATE + API_KEY;
   response = http.getUrl(url, {format:"json", cacheTime: 0})
-  timeNow = Number(date.getHours()) + 9 +3 //변경필요
+  timeNow = Number(date.getHours()) + 9 //변경필요
   console.log(timeNow)
   if (response != []){
     for(var i = 0; i < response.length; i++){

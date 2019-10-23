@@ -1,0 +1,19 @@
+structure (Modes) {
+  description (__DESCRIPTION__)
+  property (livemode) {
+    type (LiveMode)
+    min (Required) max (One)
+  }
+  property (liveteamA){
+    type (LiveTeamA)
+    min (Optional) max (One)
+  }
+  property (liveteamB){
+    type (LiveTeamB)
+    min (Optional) max (One)
+  }
+  property (liveURL){
+    type(LiveURL)
+    min (Optional) max (One)
+  }
+}
