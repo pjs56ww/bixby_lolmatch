@@ -15,7 +15,7 @@ module.exports.function = function JudgeLive (timekey) {
   var date = new Date(); 
   var year = date.getFullYear(); 
   var month = new String(date.getMonth()+1); 
-  var day = new String(date.getDate() + 2);  //변경필요 => 기본값 var day = new String(date.getDate());
+  var day = new String(date.getDate() + 3);  //변경필요 => 기본값 var day = new String(date.getDate());
   // 한자리수일 경우 0을 채워준다. 
 
   var live_mode = 0 // output
@@ -56,6 +56,8 @@ module.exports.function = function JudgeLive (timekey) {
   // Rift Rivals 7
   // World Championship 9~ 11
 
+  var competitioninfo = 0
+
 
   DATE = String(year) + "-" + month + "-" + day;
   var url = BASE_URL + DATE + API_KEY;
@@ -71,9 +73,44 @@ module.exports.function = function JudgeLive (timekey) {
 
       if (response[i]["SeasonType"]==1){
         if(aa + 9 <= timeNow && aa + 10 > timeNow){
+
+          // if (response[i]["TeamAId"] in teamdb.teamCode && response[i]["TeamBId"] in teamdb.teamCode){
+          //   if (Number(response[i]["DateTime"].slice(5, 7)) <= 4){
+          //     competitioninfo = 1 // LCK Spring
+          //   }
+          //   else if (Number(response[i]["DateTime"].slice(5, 7)) > 5 && Number(response[i]["DateTime"].slice(5, 7)) <= 9){
+          //     competitioninfo = 2 // LCK Summer
+          //   }
+          // }
+          // else if (response[i]["TeamAId"] in teamdb.teamCode && !(response[i]["TeamBId"] in teamdb.teamCode)) {
+          //   if (Number(response[i]["DateTime"].slice(5, 7)) >= 4 && Number(response[i]["DateTime"].slice(5, 7)) <= 5){
+          //     competitioninfo = 3  // MSI
+          //   }
+          //   else if (Number(response[i]["DateTime"].slice(5, 7)) == 5){
+          //     competitioninfo = 4 // Rift Rivals
+          //   }
+          //   else if (Number(response[i]["DateTime"].slice(5, 7)) >= 9 && Number(response[i]["DateTime"].slice(5, 7)) <= 11){
+          //     competitioninfo = 5 // World Champions
+          //   }
+          // }
+
           live_mode = 1
           teamA = response[i]["TeamAKey"]
           teamB = response[i]["TeamBKey"]
+          teamAKey.push(response[i]["TeamAKey"])
+          teamBKey.push(response[i]["TeamBKey"])
+          teamAScore.push(" ")
+          teamBScore.push(" ")
+
+          
+
+          if ((aa + 9) >= 24){
+            aa = aa - 24
+            datetime.push(String(aa + 9)+':00')
+          }
+          else{
+            datetime.push(String(aa + 9)+':00')
+          }
         }
         else if (timeNow >= aa + 10){
           teamAKey.push(response[i]["TeamAKey"])
@@ -109,6 +146,17 @@ module.exports.function = function JudgeLive (timekey) {
           live_mode = 1
           teamA = response[i]["TeamAKey"]
           teamB = response[i]["TeamBKey"]
+          teamAKey.push(response[i]["TeamAKey"])
+          teamBKey.push(response[i]["TeamBKey"])
+          teamAScore.push(" ")
+          teamBScore.push(" ")
+          if ((aa + 9) >= 24){
+            aa = aa - 24
+            datetime.push(String(aa + 9)+':00')
+          }
+          else{
+            datetime.push(String(aa + 9)+':00')
+          }
         }
         else if (timeNow >= aa + 14){
           teamAKey.push(response[i]["TeamAKey"])
