@@ -1,0 +1,4 @@
+enum (TimeKey) {
+  description (__DESCRIPTION__)
+  symbol (오늘 일정)
+}

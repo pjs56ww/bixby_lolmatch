@@ -1,4 +1,0 @@
-enum (Competition_Key) {
-  symbol (LCK)
-  symbol (World Championship)
-}

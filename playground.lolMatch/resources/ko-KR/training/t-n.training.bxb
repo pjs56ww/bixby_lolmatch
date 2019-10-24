@@ -1,0 +1,5 @@
+train (t-n5wbiho4z07ydh9cidddnlpby) {
+  utterance ("[g:Modes] (오늘 일정)[v:TimeKey:'오늘 일정'] 알려줘")
+  plan (Y2BmkCzISaxML8ovzUvRy8nP8U0sSc7Q881PSS1mkMUm5VWakp7q4xnmyiCNTTokMzfVO7WSgYmBEYgZgCQjAwgwQTAA)
+  last-modified (1571876933016)
+}

@@ -4,6 +4,10 @@ structure (Modes) {
     type (LiveMode)
     min (Required) max (One)
   }
+  property (matchflag){
+    type(MatchFlag)
+    min (Required) max (One)
+  }
   property (liveteamA){
     type (LiveTeamA)
     min (Optional) max (One)
@@ -15,5 +19,9 @@ structure (Modes) {
   property (liveURL){
     type(LiveURL)
     min (Optional) max (One)
+  }
+  property (match){
+    type(Match)
+    min (Optional) max (Many)
   }
 }

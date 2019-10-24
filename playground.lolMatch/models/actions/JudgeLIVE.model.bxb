@@ -2,14 +2,11 @@ action (JudgeLIVE) {
   type (Search)
   description (__DESCRIPTION__)
   collect {
-    input (team_key){
-      type(Team_Key)
+    input (timekey){
+      type(TimeKey)
       min (Optional) max (One)
     }
-    input (competition_key) {
-      type (Competition_Key)
-      min (Optional) max (One)
-    }
+
   }
   output (Modes)
 }

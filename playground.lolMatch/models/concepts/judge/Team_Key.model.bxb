@@ -1,7 +1,0 @@
-enum (Team_Key) {
-  description (__DESCRIPTION__)
-  symbol (SKT T1)
-  symbol (Damwon)
-  symbol (Griffin)
-
-}
